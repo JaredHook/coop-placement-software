@@ -1,5 +1,6 @@
 package coop.sft;
 
+import org.apache.poi.xwpf.usermodel.ParagraphAlignment;
 import org.apache.poi.xwpf.usermodel.XWPFDocument;
 import org.apache.poi.xwpf.usermodel.XWPFParagraph;
 import org.apache.poi.xwpf.usermodel.XWPFRun;
@@ -32,21 +33,21 @@ public class WordGenerator {
     }
 
     //Create Word
-    public void createWord(List<String> lines) throws IOException {
-        for (String line : lines) {
+    public void createWord() throws IOException {
             //Blank Document
             XWPFDocument document = new XWPFDocument();
             //Write the Document in file system
             FileOutputStream out = new FileOutputStream(
-                    new File("createdWord" + "_" + line + ".docx"));
+                    new File("createdWord" + ".docx"));
 
             //create Paragraph
-            XWPFParagraph paragraph = document.createParagraph();
-            XWPFRun runOneParagraph = paragraph.createRun();
-            runOneParagraph.setText("WILLIS COLLEGE " + line + "\n");
+            XWPFParagraph docHeader = document.createParagraph();
+            docHeader.setAlignment(ParagraphAlignment.CENTER);
+            XWPFRun title = docHeader.createRun();
+            title.setText("WILLIS COLLEGE " + "\n");
             // styling for text
-            runOneParagraph.setBold(true);
-            runOneParagraph.setFontSize(18);
+            title.setBold(true);
+            title.setFontSize(18);
             document.write(out);
 
             PrintFile pf = new PrintFile();
@@ -57,7 +58,7 @@ public class WordGenerator {
             }
             //Close document
             out.close();
-            System.out.println("createdWord" + "_" + line + ".docx" + " written successfully");
+            System.out.println("createdWord" + ".docx" + " written successfully");
         }
-    }
+
 }

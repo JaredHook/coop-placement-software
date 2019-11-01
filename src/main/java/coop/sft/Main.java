@@ -126,19 +126,20 @@ public class Main extends Application {
             WordGenerator wg = new WordGenerator();
 
             //VK lines text filename
-            String textFilename = "src/main/resources/coop.sft/textFile.txt";
-
-            //Gather VK Lines from text file
-            List<String> textFileLines = null;
-            try {
-                textFileLines = wg.getLines(textFilename);
-            } catch (Exception ex) {
-                ex.printStackTrace();
-            }
+//            String textFilename = "src/main/resources/coop.sft/textFile.txt";
+//
+//            //Gather VK Lines from text file
+//            List<String> textFileLines = null;
+//            try {
+//                textFileLines = wg.getLines(textFilename);
+//            } catch (Exception ex) {
+//                ex.printStackTrace();
+//            }
 
             //Create word document according to VK lines
+
             try {
-                wg.createWord(textFileLines);
+                wg.createWord();
             } catch (IOException ex) {
                 ex.printStackTrace();
             }
