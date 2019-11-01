@@ -39,23 +39,28 @@ public class WordGenerator {
             //Write the Document in file system
             FileOutputStream out = new FileOutputStream(
                     new File("createdWord" + ".docx"));
-
             //create Paragraph
             XWPFParagraph docHeader = document.createParagraph();
             docHeader.setAlignment(ParagraphAlignment.CENTER);
             XWPFRun title = docHeader.createRun();
+            XWPFRun docTitle = docHeader.createRun();
             title.setText("WILLIS COLLEGE " + "\n");
+            docTitle.setText("STUDENT COOP PLACEMENT STATUS");
             // styling for text
+            title.setFontFamily("Arial");
             title.setBold(true);
             title.setFontSize(18);
+            docTitle.setFontFamily("Arial");
+            docTitle.setBold(true);
+            docTitle.setFontSize(14);
             document.write(out);
 
-            PrintFile pf = new PrintFile();
-            try {
-                pf.printFile(/*add document here and pass it to print method to be printed*/);
-            } catch (PrintException e) {
-                e.printStackTrace();
-            }
+//            PrintFile pf = new PrintFile();
+//            try {
+//                pf.printFile(/*add document here and pass it to print method to be printed*/);
+//            } catch (PrintException e) {
+//                e.printStackTrace();
+//            }
             //Close document
             out.close();
             System.out.println("createdWord" + ".docx" + " written successfully");
