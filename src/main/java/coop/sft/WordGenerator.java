@@ -1,5 +1,8 @@
 package coop.sft;
 
+import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
+import org.apache.poi.openxml4j.opc.OPCPackage;
+import org.apache.poi.xwpf.usermodel.ParagraphAlignment;
 import org.apache.poi.xwpf.usermodel.XWPFDocument;
 import org.apache.poi.xwpf.usermodel.XWPFParagraph;
 import org.apache.poi.xwpf.usermodel.XWPFRun;
@@ -13,7 +16,7 @@ import java.util.List;
 public class WordGenerator {
 
     //Get lines from text file
-    public List<String> getLines (String fileName) throws Exception {
+    public List<String> getLines(String fileName) throws Exception {
         //ReadFile instance
         ReadFile rf = new ReadFile();
 
@@ -32,32 +35,82 @@ public class WordGenerator {
     }
 
     //Create Word
-    public void createWord(List<String> lines) throws IOException {
-        for (String line : lines) {
-            //Blank Document
-            XWPFDocument document = new XWPFDocument();
-            //Write the Document in file system
-            FileOutputStream out = new FileOutputStream(
-                    new File("createdWord" + "_" + line + ".docx"));
-
-            //create Paragraph
-            XWPFParagraph paragraph = document.createParagraph();
-            XWPFRun runOneParagraph = paragraph.createRun();
-            runOneParagraph.setText("WILLIS COLLEGE " + line + "\n");
-            // styling for text
-            runOneParagraph.setBold(true);
-            runOneParagraph.setFontSize(18);
-            document.write(out);
-
-            PrintFile pf = new PrintFile();
-            try {
-                pf.printFile(/*add document here and pass it to print method to be printed*/);
-            } catch (PrintException e) {
-                e.printStackTrace();
-            }
-            //Close document
-            out.close();
-            System.out.println("createdWord" + "_" + line + ".docx" + " written successfully");
+    public void createWord() throws IOException {
+        //Blank Document
+        XWPFDocument document = null;
+        try {
+            document = new XWPFDocument(OPCPackage.open("src/main/resources/coop.sft/coopSoftwareDoc.dotx"));
+        } catch (InvalidFormatException e) {
+            e.printStackTrace();
         }
+        //Write the Document in file system
+        FileOutputStream out = new FileOutputStream(
+                new File("createdWord" + ".docx"));
+        //create Paragraph
+        replaceText(document, "StudentName", "Jeannie");
+        replaceText(document, "Course/Batch/Year", "");
+        replaceText(document, "CoopHost", "");
+        replaceText(document, "StartDate", "");
+        replaceText(document, "EndDate", "");
+        replaceText(document, "ContractSignedOn", "");
+        replaceText(document, "Actual-End-Date", "");
+        replaceText(document, "WSIBOnFile", "");
+        replaceText(document, "InsuranceOnFile", "");
+        replaceText(document, "Evaluation1DueDate", "");
+        replaceText(document, "Evaluation1SubmittedOn", "");
+        replaceText(document, "Evaluation2DueDate", "");
+        replaceText(document, "Evaluation2SubmittedOn", "");
+        replaceText(document, "TimesheetDueDate", "");
+        replaceText(document, "TimesheetSubmittedOn", "");
+        replaceText(document, "WorkAddress", "");
+        replaceText(document, "ContactPerson", "");
+        replaceText(document, "ContactNumber", "");
+        replaceText(document, "FollowUps", "");
+        replaceText(document, "PassFailEntered", "");
+        replaceText(document, "AttendanceEntered", "");
+        replaceText(document, "OfficeManager", "");
+        replaceText(document, "PlacementCoordinator", "");
+
+        document.write(out);
+
+
+//        XWPFParagraph docHeader = document.createParagraph();
+//        docHeader.setAlignment(ParagraphAlignment.CENTER);
+//        XWPFRun title = docHeader.createRun();
+//        XWPFRun docTitle = docHeader.createRun();
+//        title.setText("WILLIS COLLEGE " + "\n");
+//            docTitle.setText("STUDENT COOP PLACEMENT STATUS");
+//            // styling for text
+//            title.setFontFamily("Arial");
+//            title.setBold(true);
+//            title.setFontSize(18);
+//            docTitle.setFontFamily("Arial");
+//            docTitle.setBold(true);
+//            docTitle.setFontSize(14);
+//            PrintFile pf = new PrintFile();
+//            try {
+//                pf.printFile(/*add document here and pass it to print method to be printed*/);
+//            } catch (PrintException e) {
+//                e.printStackTrace();
+//            }
+        //Close document
+        out.close();
+        System.out.println("createdWord" + ".docx" + " written successfully");
     }
+
+    private static XWPFDocument replaceText(XWPFDocument doc, String findText, String replaceText) {
+
+        for (XWPFParagraph p : doc.getParagraphs()) {
+            List<XWPFRun> runs = p.getRuns();
+            for (XWPFRun r : runs) {
+                String text = r.getText(0);
+                if (text != null && text.contains(findText)) {
+                    text = text.replace(findText, replaceText);
+                    r.setText(text, 0);
+                }
+            }
+        }
+        return doc;
+    }
+
 }
