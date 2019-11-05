@@ -28,7 +28,6 @@ public class Main extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-
         GridPane root = new GridPane();
         FlowPane leftbanner = new FlowPane();
         leftbanner.setStyle("-fx-border-color: black");
@@ -62,10 +61,28 @@ public class Main extends Application {
 
     public GridPane createGridPane() {
 
+        Person person = new Person();
         GridPane grid = new GridPane();
         grid.setPadding(new Insets(10));
         grid.setHgap(20);
         grid.setVgap(20);
+
+        //Form fields Objects declaration
+
+        Label FirstName = new Label();
+        TextField Fname = new TextField();
+
+        Label LastName = new Label();
+        TextField Lname = new TextField();
+
+        Label CourseL = new Label();
+        TextField Course = new TextField();
+
+        TextField BatchYear = new TextField();
+        DatePicker Batch = new DatePicker();
+
+        Label CoopHostL = new Label();
+        TextField CoopHost = new TextField();
 
 
 
@@ -85,13 +102,14 @@ public class Main extends Application {
         grid.add(ProfileText, 1, 2, 1, 1);
 
         grid.add(new Label("First Name:"), 0, 3, 1, 1);
-        grid.add(new TextField(), 1, 3, 1, 1);
+        grid.add(FirstName, 2, 3, 1,1);
+        grid.add(Fname, 1, 3, 1, 1);
 
         grid.add(new Label("Last Name:"), 0, 4, 1, 1);
-        grid.add(new TextField(), 1, 4, 1, 1);
+        grid.add(Lname, 1, 4, 1, 1);
 
         grid.add(new Label("Course studied:"), 0, 5, 1, 1);
-        grid.add(new TextField(), 1, 5, 1, 1);
+        grid.add(Course, 1, 5, 1, 1);
 
 //        grid.add(new Separator(), 0, 4, 3, 1);
 
@@ -99,7 +117,7 @@ public class Main extends Application {
 
         //Date Picker
         DatePicker datePicker = new DatePicker();
-        grid.add(datePicker, 1, 6, 1, 1);
+        grid.add(Batch, 1, 6, 1, 1);
 
 
         //Add Button to read date
@@ -184,41 +202,52 @@ public class Main extends Application {
 
 
 
-
+//Contract signed check box
         grid.add(new CheckBox("contract signed"), 0, 14, 3, 1);
 
 
 
-
+//Contact address
         grid.add(new Label("Contact Address "), 0, 15, 1, 1);
         grid.add(new TextField(), 1, 15, 1, 1);
         grid.add(new Button("Browse..."), 2, 15, 1, 1);
-
+//Contact person text
         grid.add(new Label("Contact Person"),1, 16, 1, 1);
-
+//Work address
         grid.add(new CheckBox("Work Address "), 0, 17, 1, 1);
         grid.add(new TextField(), 1, 17, 1, 1);
 
 //        grid.add(new CheckBox(""), 0, 14, 1, 1);
 
+        //Lower end Buttons FlowPane
         FlowPane fp2 = new FlowPane(Orientation.HORIZONTAL, 20, 20);
         fp2.setAlignment(Pos.CENTER_RIGHT);
+
+        //Save and Print button
         Button btn = new Button("Save and Print");
         fp2.getChildren().addAll(
                 btn
         );
-
+        //Search button added
         Button search = new Button("Search");
         fp2.getChildren().addAll(
                 search
         );
 
-        search.setOnAction(e ->{
-            System.out.println("Search");
+        //Search button action set
+        search.setOnAction(e ->
+        {
+
+            FirstName.setText(" First Name " + Fname.getText());
+            System.out.println(Fname.getText() + " " + Lname.getText());
+            LastName.setText("Last Name " + Lname.getText());
         });
 
+        //Save and Print button action set
         btn.setOnAction(e ->{
-            WriteExcelFile.writeExcelFile();
+            person.setFirstName(Fname.getText());
+            person.setLastName(Lname.getText());
+            WriteExcelFile.writeExcelFile(person);
             WordGenerator wg = new WordGenerator();
 
             //VK lines text filename

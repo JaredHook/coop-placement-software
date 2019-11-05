@@ -17,7 +17,7 @@ public class WriteExcelFile {
 
     private static String[] columns = {"Student Name", "Email", "Program Name", "Company Name", "Start Date", "End Date"};
 
-    public static void writeExcelFile(/*arguments for what to put in excel here*/)
+    public static void writeExcelFile(Person person)
     {
 
 //Blank workbook
