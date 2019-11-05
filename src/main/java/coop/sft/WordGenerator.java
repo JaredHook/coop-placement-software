@@ -16,7 +16,7 @@ import java.util.List;
 public class WordGenerator {
 
     //Get lines from text file
-    public List<String> getLines (String fileName) throws Exception {
+    public List<String> getLines(String fileName) throws Exception {
         //ReadFile instance
         ReadFile rf = new ReadFile();
 
@@ -36,7 +36,7 @@ public class WordGenerator {
 
     //Create Word
     public void createWord() throws IOException {
-            //Blank Document
+        //Blank Document
         XWPFDocument document = null;
         try {
             document = new XWPFDocument(OPCPackage.open("src/main/resources/coop.sft/coopSoftwareDoc.dotx"));
@@ -44,12 +44,34 @@ public class WordGenerator {
             e.printStackTrace();
         }
         //Write the Document in file system
-            FileOutputStream out = new FileOutputStream(
-                    new File("createdWord" + ".docx"));
-            //create Paragraph
-            replaceText(document, "Student Name", "Jeannie");
+        FileOutputStream out = new FileOutputStream(
+                new File("createdWord" + ".docx"));
+        //create Paragraph
+        replaceText(document, "StudentName", "Jeannie");
+        replaceText(document, "Course/Batch/Year", "");
+        replaceText(document, "CoopHost", "");
+        replaceText(document, "StartDate", "");
+        replaceText(document, "EndDate", "");
+        replaceText(document, "ContractSignedOn", "");
+        replaceText(document, "Actual-End-Date", "");
+        replaceText(document, "WSIBOnFile", "");
+        replaceText(document, "InsuranceOnFile", "");
+        replaceText(document, "Evaluation1DueDate", "");
+        replaceText(document, "Evaluation1SubmittedOn", "");
+        replaceText(document, "Evaluation2DueDate", "");
+        replaceText(document, "Evaluation2SubmittedOn", "");
+        replaceText(document, "TimesheetDueDate", "");
+        replaceText(document, "TimesheetSubmittedOn", "");
+        replaceText(document, "WorkAddress", "");
+        replaceText(document, "ContactPerson", "");
+        replaceText(document, "ContactNumber", "");
+        replaceText(document, "FollowUps", "");
+        replaceText(document, "PassFailEntered", "");
+        replaceText(document, "AttendanceEntered", "");
+        replaceText(document, "OfficeManager", "");
+        replaceText(document, "PlacementCoordinator", "");
 
-            document.write(out);
+        document.write(out);
 
 
 //        XWPFParagraph docHeader = document.createParagraph();
@@ -71,24 +93,24 @@ public class WordGenerator {
 //            } catch (PrintException e) {
 //                e.printStackTrace();
 //            }
-            //Close document
-            out.close();
-            System.out.println("createdWord" + ".docx" + " written successfully");
-        }
+        //Close document
+        out.close();
+        System.out.println("createdWord" + ".docx" + " written successfully");
+    }
 
-        private static XWPFDocument replaceText(XWPFDocument doc, String findText, String replaceText) {
+    private static XWPFDocument replaceText(XWPFDocument doc, String findText, String replaceText) {
 
-            for (XWPFParagraph p : doc.getParagraphs()) {
-                List<XWPFRun> runs = p.getRuns();
-                for (XWPFRun r : runs) {
-                    String text = r.getText(0);
-                    if(text != null && text.contains(findText)) {
-                        text = text.replace(findText, replaceText);
-                        r.setText(text, 0);
-                    }
+        for (XWPFParagraph p : doc.getParagraphs()) {
+            List<XWPFRun> runs = p.getRuns();
+            for (XWPFRun r : runs) {
+                String text = r.getText(0);
+                if (text != null && text.contains(findText)) {
+                    text = text.replace(findText, replaceText);
+                    r.setText(text, 0);
                 }
             }
-            return doc;
         }
+        return doc;
+    }
 
 }
