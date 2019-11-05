@@ -7,10 +7,10 @@ import javax.print.attribute.standard.Copies;
 import java.io.*;
 
 public class PrintFile {
-    public void printFile(/*setup arguments for printing*/) throws IOException, PrintException {
+    public void printFile(File file) throws IOException, PrintException {
 
         //Java print api sample example
-        InputStream stream = new FileInputStream(new File("src/main/resources/coop.sft/textFile.txt"));
+        InputStream stream = new FileInputStream(file);
 
         DocFlavor myFormat = DocFlavor.INPUT_STREAM.AUTOSENSE;
         Doc myDoc = new SimpleDoc(stream, myFormat, null);

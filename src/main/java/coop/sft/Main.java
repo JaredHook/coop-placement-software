@@ -264,7 +264,7 @@ public class Main extends Application {
             //Create word document according to VK lines
 
             try {
-                wg.createWord();
+                wg.createWord(person);
             } catch (IOException ex) {
                 ex.printStackTrace();
             }

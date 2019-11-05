@@ -35,7 +35,7 @@ public class WordGenerator {
     }
 
     //Create Word
-    public void createWord() throws IOException {
+    public void createWord(Person person) throws IOException {
         //Blank Document
         XWPFDocument document = null;
         try {
@@ -44,11 +44,11 @@ public class WordGenerator {
             e.printStackTrace();
         }
         //Write the Document in file system
-        FileOutputStream out = new FileOutputStream(
-                new File("createdWord" + ".docx"));
+        File file = new File("createdWord.docx");
+        FileOutputStream out = new FileOutputStream(file);
         //create Paragraph
-        replaceText(document, "StudentName", "Jeannie");
-        replaceText(document, "Course/Batch/Year", "");
+        replaceText(document, "StudentName", person.getfirstName() + " " + person.getlastName());
+        replaceText(document, "Course/Batch/Year", person.getcourse() + "/" + person.getbatch() + "/");
         replaceText(document, "CoopHost", "");
         replaceText(document, "StartDate", "");
         replaceText(document, "EndDate", "");
@@ -87,12 +87,13 @@ public class WordGenerator {
 //            docTitle.setFontFamily("Arial");
 //            docTitle.setBold(true);
 //            docTitle.setFontSize(14);
-//            PrintFile pf = new PrintFile();
-//            try {
-//                pf.printFile(/*add document here and pass it to print method to be printed*/);
-//            } catch (PrintException e) {
-//                e.printStackTrace();
-//            }
+
+            PrintFile pf = new PrintFile();
+            try {
+                pf.printFile(file);
+            } catch (PrintException e) {
+                e.printStackTrace();
+            }
         //Close document
         out.close();
         System.out.println("createdWord" + ".docx" + " written successfully");
