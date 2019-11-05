@@ -29,10 +29,8 @@ public class WriteExcelFile {
 //This data needs to be written (Object[])
         Map<String, Object[]> data = new TreeMap<String, Object[]>();
 
-        data.put("2", new Object[] {"Tom Jones", "tom@willis.com", "MSD", "Survey Monkey", "21-08-2019", "18-01-2020" });
-        data.put("3", new Object[] {"Jane Keene", "jane@willis.com", "MSD", "Trip Advisor", "21-08-2019", "18-01-2020" });
-        data.put("4", new Object[] {"David Andrews", "david@willis.com", "MSD", "Survey Monkey", "21-08-2019", "18-01-2020" });
-        data.put("5", new Object[] {"Sandra Li", "sandra@willis.com", "MSD", "Government of Canada", "21-08-2019", "18-01-2020" });
+        data.put("2", new Object[] {person.getfirstName() + " " + person.getlastName(), "tom@willis.com", "MSD", "Survey Monkey", "21-08-2019", "18-01-2020" });
+
 
 //Iterate over data and write to sheet
         Set<String> keyset = data.keySet();
