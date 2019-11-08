@@ -47,7 +47,7 @@ public class WordGenerator {
         File file = new File("createdWord.docx");
         FileOutputStream out = new FileOutputStream(file);
         //create Paragraph
-        TextReplacer replacer = new TextReplacer("$Student", person.getfirstName() + " " + person.getlastName());
+        TextReplacer replacer = new TextReplacer("$Student", person.getFirstName() + " " + person.getLastName());
         replacer.replace(document);
         replacer.setSearchValue("$Course");
         replacer.setReplacement("");
