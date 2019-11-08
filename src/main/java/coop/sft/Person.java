@@ -40,6 +40,7 @@ public class Person {
     public void setContactAdd(String contactAdd) { this.contactAdd = contactAdd; }
     public void setWorkAdd(String workAdd) { this.workAdd = workAdd; }
 
+
     public String getFirstName() {
         return firstName;
     }

@@ -50,54 +50,80 @@ public class WordGenerator {
         TextReplacer replacer = new TextReplacer("$Student", person.getFirstName() + " " + person.getLastName());
         replacer.replace(document);
         replacer.setSearchValue("$Course");
-        replacer.setReplacement("");
+        replacer.setReplacement(person.getCourse() + " ");
         replacer.replace(document);
         replacer.setSearchValue("$Batch");
+        replacer.setReplacement(person.getBatch() + " ");
         replacer.replace(document);
         replacer.setSearchValue("$Year");
+        replacer.setReplacement(person.getYear() + " ");
         replacer.replace(document);
         replacer.setSearchValue("$Coop-Host");
+        replacer.setReplacement(person.getCoopHost() + " ");
         replacer.replace(document);
         replacer.setSearchValue("$Start-Date");
+        //replacer.setReplacement(person.get)
         replacer.replace(document);
         replacer.setSearchValue("$End-Date");
+        //replacer.setReplacement(person.get)
         replacer.replace(document);
         replacer.setSearchValue("$Contract-Signed-On");
+        //replacer.setReplacement(person.get)
         replacer.replace(document);
         replacer.setSearchValue("$Actual-End-Date");
+        //replacer.setReplacement(person.get)
         replacer.replace(document);
         replacer.setSearchValue("$WSIB-On-File");
+        replacer.setReplacement(person.getWsib() + " ");
         replacer.replace(document);
         replacer.setSearchValue("$Insurance-On-File");
+        replacer.setReplacement(person.getInsurance() + " ");
         replacer.replace(document);
         replacer.setSearchValue("$Evaluation-1-Due-Date");
+        //replacer.setReplacement(person.get)
         replacer.replace(document);
         replacer.setSearchValue("$Evaluation-1-Submitted-On");
+        //replacer.setReplacement(person.get)
         replacer.replace(document);
         replacer.setSearchValue("$Evaluation-2-Due-Date");
+        //replacer.setReplacement(person.get)
         replacer.replace(document);
         replacer.setSearchValue("$Evaluation-2-Submitted-On");
+        //replacer.setReplacement(person.get)
         replacer.replace(document);
         replacer.setSearchValue("$Timesheet-Due-Date");
+        //replacer.setReplacement(person.get)
         replacer.replace(document);
         replacer.setSearchValue("$Timesheet-Submitted-On");
+        //replacer.setReplacement(person.get)
         replacer.replace(document);
         replacer.setSearchValue("$Work-Address");
+        replacer.setReplacement(person.getWorkAdd() + " ");
         replacer.replace(document);
         replacer.setSearchValue("$Contact-Person");
+        replacer.setReplacement(person.getContactAdd() + " ");
         replacer.replace(document);
         replacer.setSearchValue("$Contact-Number");
+        //replacer.setReplacement(person.get)
         replacer.replace(document);
         replacer.setSearchValue("$Follow-ups");
+        //replacer.setReplacement(person.get)
         replacer.replace(document);
         replacer.setSearchValue("$Pass-Fail-Entered");
+        //replacer.setReplacement(person.get)
         replacer.replace(document);
         replacer.setSearchValue("$Attendance-Entered");
+        //replacer.setReplacement(person.get)
         replacer.replace(document);
         replacer.setSearchValue("$Office-Manager");
+        //replacer.setReplacement(person.get)
         replacer.replace(document);
         replacer.setSearchValue("$Placement-Coordinator");
+        //replacer.setReplacement(person.get)
         replacer.replace(document);
+
+
+        
 //        replaceText(document, "$Student", person.getfirstName() + " " + person.getlastName());
 //        replaceText(document, "$Course", "");
 //        replaceText(document, "$Batch",  "");
