@@ -123,7 +123,7 @@ public class WordGenerator {
         replacer.replace(document);
 
 
-        
+
 //        replaceText(document, "$Student", person.getfirstName() + " " + person.getlastName());
 //        replaceText(document, "$Course", "");
 //        replaceText(document, "$Batch",  "");

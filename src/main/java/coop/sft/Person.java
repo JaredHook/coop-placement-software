@@ -2,6 +2,11 @@ package coop.sft;
 
 public class Person {
 
+// TODO: add Start-Date, End-Date, Contract-Signed-On, Actual-End-Date, Evaluation-1-Due-Date, Evaluation-1-Submitted-On,
+// TODO: add Evaluation-2-Due-Date, Evaluation-2-Submitted-On, Timesheet-Due-Date, Timesheet-Submitted-On,
+// TODO: add Contact-Number, Follow-ups, Pass-Fail-Entered, Attendance-Entered, Office-Manager, Placement-Coordinator
+// TODO: what is ContactAdd variable set for in template? Is it Contact Address?
+// TODO: ensure all fields are accounted for     
 
     private String firstName;
     private String lastName;
