@@ -62,16 +62,16 @@ public class WordGenerator {
         replacer.setReplacement(person.getCoopHost() + " ");
         replacer.replace(document);
         replacer.setSearchValue("$Start-Date");
-        //replacer.setReplacement(person.get)
+        replacer.setReplacement(person.getStartDate() + " ");
         replacer.replace(document);
         replacer.setSearchValue("$End-Date");
-        //replacer.setReplacement(person.get)
+        replacer.setReplacement(person.getEndDate() + " ");
         replacer.replace(document);
         replacer.setSearchValue("$Contract-Signed-On");
-        //replacer.setReplacement(person.get)
+        replacer.setReplacement(person.getContractSignedOn() + " ");
         replacer.replace(document);
         replacer.setSearchValue("$Actual-End-Date");
-        //replacer.setReplacement(person.get)
+        replacer.setReplacement(person.getActualEndDate() + " ");
         replacer.replace(document);
         replacer.setSearchValue("$WSIB-On-File");
         replacer.setReplacement(person.getWsib() + " ");

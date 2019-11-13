@@ -4,7 +4,7 @@ public class Person {
 
 // TODO: decide if we can use different data types in java template for our date variables
 // TODO: fields must be added to the ui form
-// TODO: add Actual-End-Date, Evaluation-1-Due-Date, Evaluation-1-Submitted-On,
+// TODO: add Evaluation-1-Due-Date, Evaluation-1-Submitted-On,
 // TODO: add Evaluation-2-Due-Date, Evaluation-2-Submitted-On, Timesheet-Due-Date, Timesheet-Submitted-On,
 // TODO: add Contact-Number, Follow-ups, Pass-Fail-Entered, Attendance-Entered, Office-Manager, Placement-Coordinator
 // TODO: ensure all fields are accounted for
@@ -26,6 +26,10 @@ public class Person {
     private String contractSignedOn;
     private String contactAdd;
     private String workAdd;
+
+    // these fields must still be added to the form
+    private String actualEndDate;
+
 
 
     public void setFirstName(String firstName) {
@@ -52,7 +56,7 @@ public class Person {
     public void setContractSignedOn(String contractSignedOn){ this.contractSignedOn = contractSignedOn; }
     public void setContactAdd(String contactAdd) { this.contactAdd = contactAdd; }
     public void setWorkAdd(String workAdd) { this.workAdd = workAdd; }
-
+    public void setActualEndDate(String actualEndDate) { this.actualEndDate = actualEndDate; }
 
     public String getFirstName() {
         return firstName;
@@ -76,7 +80,7 @@ public class Person {
     public String getContractSignedOn() { return contractSignedOn; }
     public String getContactAdd() { return contactAdd; }
     public String getWorkAdd() { return workAdd; }
-
+    public String getActualEndDate() { return actualEndDate; }
 
 
 
