@@ -2,10 +2,13 @@ package coop.sft;
 
 public class Person {
 
+// TODO: decide if we can use different data types in java template for our date variables
+// TODO: fields must be added to the ui form
 // TODO: add Actual-End-Date, Evaluation-1-Due-Date, Evaluation-1-Submitted-On,
 // TODO: add Evaluation-2-Due-Date, Evaluation-2-Submitted-On, Timesheet-Due-Date, Timesheet-Submitted-On,
 // TODO: add Contact-Number, Follow-ups, Pass-Fail-Entered, Attendance-Entered, Office-Manager, Placement-Coordinator
 // TODO: ensure all fields are accounted for
+
 
     private String firstName;
     private String lastName;
