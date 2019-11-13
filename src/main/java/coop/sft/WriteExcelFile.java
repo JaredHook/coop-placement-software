@@ -29,7 +29,7 @@ public class WriteExcelFile {
 //This data needs to be written (Object[])
         Map<String, Object[]> data = new TreeMap<String, Object[]>();
 
-        data.put("2", new Object[] {person.getfirstName() + " " + person.getlastName(), "tom@willis.com", "MSD", "Survey Monkey", "21-08-2019", "18-01-2020" });
+        data.put("2", new Object[] {person.getFirstName() + " " + person.getLastName(), "tom@willis.com", "MSD", "Survey Monkey", "21-08-2019", "18-01-2020" });
 
 
 //Iterate over data and write to sheet
