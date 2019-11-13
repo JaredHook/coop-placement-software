@@ -80,22 +80,22 @@ public class WordGenerator {
         replacer.setReplacement(person.getInsurance() + " ");
         replacer.replace(document);
         replacer.setSearchValue("$Evaluation-1-Due-Date");
-        //replacer.setReplacement(person.get)
+        replacer.setReplacement(person.getEvaluation1DueDate() + " ");
         replacer.replace(document);
         replacer.setSearchValue("$Evaluation-1-Submitted-On");
-        //replacer.setReplacement(person.get)
+        replacer.setReplacement(person.getEvaluation1SubmittedOn() + " ");
         replacer.replace(document);
         replacer.setSearchValue("$Evaluation-2-Due-Date");
-        //replacer.setReplacement(person.get)
+        replacer.setReplacement(person.getEvaluation2DueDate() + " ");
         replacer.replace(document);
         replacer.setSearchValue("$Evaluation-2-Submitted-On");
-        //replacer.setReplacement(person.get)
+        replacer.setReplacement(person.getEvaluation2SubmittedOn() + " ");
         replacer.replace(document);
         replacer.setSearchValue("$Timesheet-Due-Date");
-        //replacer.setReplacement(person.get)
+        replacer.setReplacement(person.getTimesheetDueDate() + " ");
         replacer.replace(document);
         replacer.setSearchValue("$Timesheet-Submitted-On");
-        //replacer.setReplacement(person.get)
+        replacer.setReplacement(person.getTimesheetSubmittedOn() + " ");
         replacer.replace(document);
         replacer.setSearchValue("$Work-Address");
         replacer.setReplacement(person.getWorkAdd() + " ");
@@ -104,51 +104,23 @@ public class WordGenerator {
         replacer.setReplacement(person.getContactAdd() + " ");
         replacer.replace(document);
         replacer.setSearchValue("$Contact-Number");
-        //replacer.setReplacement(person.get)
+        replacer.setReplacement(person.getContactNumber() + " ");
         replacer.replace(document);
         replacer.setSearchValue("$Follow-ups");
-        //replacer.setReplacement(person.get)
+        replacer.setReplacement(person.getFollowUps() + " ");
         replacer.replace(document);
         replacer.setSearchValue("$Pass-Fail-Entered");
-        //replacer.setReplacement(person.get)
+        replacer.setReplacement(person.getPassFailEntered() + " ");
         replacer.replace(document);
         replacer.setSearchValue("$Attendance-Entered");
-        //replacer.setReplacement(person.get)
+        replacer.setReplacement(person.getAttendanceEntered() + " ");
         replacer.replace(document);
         replacer.setSearchValue("$Office-Manager");
-        //replacer.setReplacement(person.get)
+        replacer.setReplacement(person.getOfficeManager() + " ");
         replacer.replace(document);
         replacer.setSearchValue("$Placement-Coordinator");
-        //replacer.setReplacement(person.get)
+        replacer.setReplacement(person.getPlacementCoordinator() + " ");
         replacer.replace(document);
-
-
-
-//        replaceText(document, "$Student", person.getfirstName() + " " + person.getlastName());
-//        replaceText(document, "$Course", "");
-//        replaceText(document, "$Batch",  "");
-//        replaceText(document, "$Year", "");
-//        replaceText(document, "$CoopHost", "");
-//        replaceText(document, "$Start-Date", "");
-//        replaceText(document, "$End-Date", "");
-//        replaceText(document, "$Contract-Signed-On", "");
-//        replaceText(document, "$Actual-End-Date", "");
-//        replaceText(document, "$WSIB-On-File", "");
-//        replaceText(document, "$Insurance-On-File", "");
-//        replaceText(document, "$Evaluation-1-Due-Date", "");
-//        replaceText(document, "$Evaluation-1-Submitted-On", "");
-//        replaceText(document, "$Evaluation-2-Due-Date", "");
-//        replaceText(document, "$Evaluation-2-Submitted-On", "");
-//        replaceText(document, "$Timesheet-Due-Date", "");
-//        replaceText(document, "$Timesheet-Submitted-On", "");
-//        replaceText(document, "$Work-Address", "");
-//        replaceText(document, "$Contact-Person", "");
-//        replaceText(document, "$Contact-Number", "");
-//        replaceText(document, "$Follow-ups", "");
-//        replaceText(document, "$Pass-Fail-Entered", "");
-//        replaceText(document, "$Attendance-Entered", "");
-//        replaceText(document, "$Office-Manager", "");
-//        replaceText(document, "$Placement-Coordinator", "");
 
         document.write(out);
 

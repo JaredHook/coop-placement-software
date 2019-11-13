@@ -2,13 +2,9 @@ package coop.sft;
 
 public class Person {
 
-// TODO: decide if we can use different data types in java template for our date variables
+// TODO: decide if we can use different data types in java template for our variables
 // TODO: fields must be added to the ui form
-// TODO: add Evaluation-1-Due-Date, Evaluation-1-Submitted-On,
-// TODO: add Evaluation-2-Due-Date, Evaluation-2-Submitted-On, Timesheet-Due-Date, Timesheet-Submitted-On,
-// TODO: add Contact-Number, Follow-ups, Pass-Fail-Entered, Attendance-Entered, Office-Manager, Placement-Coordinator
-// TODO: ensure all fields are accounted for
-
+// TODO: ensure all fields are accounted for in template
 
     private String firstName;
     private String lastName;
@@ -26,10 +22,20 @@ public class Person {
     private String contractSignedOn;
     private String contactAdd;
     private String workAdd;
-
     // these fields must still be added to the form
     private String actualEndDate;
-
+    private String evaluation1DueDate;
+    private String evaluation1SubmittedOn;
+    private String evaluation2DueDate;
+    private String evaluation2SubmittedOn;
+    private String timesheetDueDate;
+    private String timesheetSubmittedOn;
+    private String contactNumber;
+    private String followUps;
+    private String passFailEntered;
+    private String attendanceEntered;
+    private String officeManager;
+    private String placementCoordinator;
 
 
     public void setFirstName(String firstName) {
@@ -57,6 +63,18 @@ public class Person {
     public void setContactAdd(String contactAdd) { this.contactAdd = contactAdd; }
     public void setWorkAdd(String workAdd) { this.workAdd = workAdd; }
     public void setActualEndDate(String actualEndDate) { this.actualEndDate = actualEndDate; }
+    public void setEvaluation1DueDate(String evaluation1DueDate) { this.evaluation1DueDate = evaluation1DueDate; }
+    public void setEvaluation1SubmittedOn(String evaluation1SubmittedOn) { this.evaluation1SubmittedOn = evaluation1SubmittedOn; }
+    public void setEvaluation2DueDate(String evaluation2DueDate) { this.evaluation2DueDate = evaluation2DueDate; }
+    public void setEvaluation2SubmittedOn(String evaluation2SubmittedOn) { this.evaluation2SubmittedOn = evaluation2SubmittedOn; }
+    public void setTimesheetDueDate(String timesheetDueDate) { this.timesheetDueDate = timesheetDueDate; }
+    public void setTimesheetSubmittedOn(String timesheetSubmittedOn) { this.timesheetSubmittedOn = timesheetSubmittedOn; }
+    public void setContactNumber(String contactNumber) { this.contactNumber = contactNumber; }
+    public void setFollowUps(String followUps) { this.followUps = followUps; }
+    public void setPassFailEntered(String passFailEntered) { this.passFailEntered = passFailEntered; }
+    public void setAttendanceEntered(String attendanceEntered) { this.attendanceEntered = attendanceEntered; }
+    public void setOfficeManager(String officeManager) { this.officeManager = officeManager; }
+    public void setPlacementCoordinator(String placementCoordinator) { this.placementCoordinator = placementCoordinator; }
 
     public String getFirstName() {
         return firstName;
@@ -81,10 +99,18 @@ public class Person {
     public String getContactAdd() { return contactAdd; }
     public String getWorkAdd() { return workAdd; }
     public String getActualEndDate() { return actualEndDate; }
-
-
-
-
+    public String getEvaluation1DueDate() { return evaluation1DueDate; }
+    public String getEvaluation1SubmittedOn() { return evaluation1SubmittedOn; }
+    public String getEvaluation2DueDate() { return evaluation2DueDate; }
+    public String getEvaluation2SubmittedOn() { return evaluation2SubmittedOn; }
+    public String getTimesheetDueDate() { return timesheetDueDate; }
+    public String getTimesheetSubmittedOn() { return timesheetSubmittedOn; }
+    public String getContactNumber() { return contactNumber; }
+    public String getFollowUps() { return followUps; }
+    public String getPassFailEntered() { return passFailEntered; }
+    public String getAttendanceEntered() { return attendanceEntered; }
+    public String getOfficeManager() { return officeManager; }
+    public String getPlacementCoordinator() { return placementCoordinator; }
 
 //    }
 
