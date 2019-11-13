@@ -18,7 +18,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.time.LocalDate;
-import java.util.List;
+
 
 public class Main extends Application {
 
@@ -113,7 +113,7 @@ public class Main extends Application {
 
 //        grid.add(new Separator(), 0, 4, 3, 1);
 
-        grid.add(new Label("Bash/Year:"), 0, 6, 1, 1);
+        grid.add(new Label("Batch/Year:"), 0, 6, 1, 1);
 
         //Date Picker
         DatePicker datePicker = new DatePicker();
@@ -183,7 +183,7 @@ public class Main extends Application {
 
 
         //Pre-loader
-        grid.add(new CheckBox("Create Custom Pre-loader"), 0, 9, 3, 1);
+//        grid.add(new CheckBox("Create Custom Pre-loader"), 0, 9, 3, 1);
 
         //Project Name
         grid.add(new Label("Project Name:"), 0, 10, 1, 1);
@@ -203,18 +203,19 @@ public class Main extends Application {
 
 
 //Contract signed check box
-        grid.add(new CheckBox("contract signed"), 0, 14, 3, 1);
+        grid.add(new Label("contract signed on:"), 0, 14, 1, 1);
+        grid.add(new TextField(), 1, 14, 1, 1);
 
 
 
 //Contact address
         grid.add(new Label("Contact Address "), 0, 15, 1, 1);
         grid.add(new TextField(), 1, 15, 1, 1);
-        grid.add(new Button("Browse..."), 2, 15, 1, 1);
+//        grid.add(new Button("Browse..."), 2, 15, 1, 1);
 //Contact person text
         grid.add(new Label("Contact Person"),1, 16, 1, 1);
 //Work address
-        grid.add(new CheckBox("Work Address "), 0, 17, 1, 1);
+        grid.add(new Label("Work Address "), 0, 17, 1, 1);
         grid.add(new TextField(), 1, 17, 1, 1);
 
 //        grid.add(new CheckBox(""), 0, 14, 1, 1);
