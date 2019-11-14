@@ -14,12 +14,12 @@ public class Person {
     private String coopHost;
     private String startDate;
     private String endDate;
-    private String coopPlacement;
     private String wsib;
     private String insurance;
-    private String contractSignedOn;
     private String contactName;
+    private String contactNumber;
     private String contactEmail;
+    private String contractSignedOn;
     // these fields must still be added to the form
     private String actualEndDate;
     private String evaluation1DueDate;
@@ -28,7 +28,7 @@ public class Person {
     private String evaluation2SubmittedOn;
     private String timesheetDueDate;
     private String timesheetSubmittedOn;
-    private String contactNumber;
+
     // these fields no longer required on ui form - only on word doc template.
     //private String followUps;
     //private String passFailEntered;
@@ -53,7 +53,6 @@ public class Person {
     public void setCoopHost(String coopHost) { this.coopHost = coopHost; }
     public void setStartDate(String startDate) { this.startDate = startDate; }
     public void setEndDate(String endDate) { this.endDate = endDate; }
-    public void setCoopPlacement(String coopPlacement) { this.coopPlacement = coopPlacement; }
     public void setWsib(String wsib) { this.wsib = wsib; }
     public void setInsurance(String insurance) { this.insurance = insurance; }
     public void setContractSignedOn(String contractSignedOn){ this.contractSignedOn = contractSignedOn; }
@@ -90,7 +89,6 @@ public class Person {
     public String getCoopHost() { return coopHost; }
     public String getStartDate() { return startDate; }
     public String getEndDate() { return endDate; }
-    public String getCoopPlacement() { return coopPlacement; }
     public String getWsib() { return wsib; }
     public String getInsurance() { return insurance; }
     public String getContractSignedOn() { return contractSignedOn; }
