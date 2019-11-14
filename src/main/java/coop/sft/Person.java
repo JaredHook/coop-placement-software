@@ -14,14 +14,12 @@ public class Person {
     private String coopHost;
     private String startDate;
     private String endDate;
-    private String projectName;
     private String coopPlacement;
     private String wsib;
-    private String placement;
     private String insurance;
     private String contractSignedOn;
-    private String contactAdd;
-    private String workAdd;
+    private String contactName;
+    private String contactEmail;
     // these fields must still be added to the form
     private String actualEndDate;
     private String evaluation1DueDate;
@@ -31,11 +29,12 @@ public class Person {
     private String timesheetDueDate;
     private String timesheetSubmittedOn;
     private String contactNumber;
-    private String followUps;
-    private String passFailEntered;
-    private String attendanceEntered;
-    private String officeManager;
-    private String placementCoordinator;
+    // these fields no longer required on ui form - only on word doc template.
+    //private String followUps;
+    //private String passFailEntered;
+    //private String attendanceEntered;
+    //private String officeManager;
+    //private String placementCoordinator;
 
 
     public void setFirstName(String firstName) {
@@ -54,14 +53,12 @@ public class Person {
     public void setCoopHost(String coopHost) { this.coopHost = coopHost; }
     public void setStartDate(String startDate) { this.startDate = startDate; }
     public void setEndDate(String endDate) { this.endDate = endDate; }
-    public void setProjectName(String projectName) { this.projectName = projectName; }
     public void setCoopPlacement(String coopPlacement) { this.coopPlacement = coopPlacement; }
     public void setWsib(String wsib) { this.wsib = wsib; }
-    public void setPlacement(String placement) { this.placement = placement; }
     public void setInsurance(String insurance) { this.insurance = insurance; }
     public void setContractSignedOn(String contractSignedOn){ this.contractSignedOn = contractSignedOn; }
-    public void setContactAdd(String contactAdd) { this.contactAdd = contactAdd; }
-    public void setWorkAdd(String workAdd) { this.workAdd = workAdd; }
+    public void setContactName(String contactName) { this.contactName = contactName; }
+    public void setContactEmail(String contactEmail) { this.contactEmail = contactEmail; }
     public void setActualEndDate(String actualEndDate) { this.actualEndDate = actualEndDate; }
     public void setEvaluation1DueDate(String evaluation1DueDate) { this.evaluation1DueDate = evaluation1DueDate; }
     public void setEvaluation1SubmittedOn(String evaluation1SubmittedOn) { this.evaluation1SubmittedOn = evaluation1SubmittedOn; }
@@ -70,11 +67,14 @@ public class Person {
     public void setTimesheetDueDate(String timesheetDueDate) { this.timesheetDueDate = timesheetDueDate; }
     public void setTimesheetSubmittedOn(String timesheetSubmittedOn) { this.timesheetSubmittedOn = timesheetSubmittedOn; }
     public void setContactNumber(String contactNumber) { this.contactNumber = contactNumber; }
-    public void setFollowUps(String followUps) { this.followUps = followUps; }
-    public void setPassFailEntered(String passFailEntered) { this.passFailEntered = passFailEntered; }
-    public void setAttendanceEntered(String attendanceEntered) { this.attendanceEntered = attendanceEntered; }
-    public void setOfficeManager(String officeManager) { this.officeManager = officeManager; }
-    public void setPlacementCoordinator(String placementCoordinator) { this.placementCoordinator = placementCoordinator; }
+
+    // these fields no longer required on ui form - only on word doc template.
+    //public void setFollowUps(String followUps) { this.followUps = followUps; }
+    //public void setPassFailEntered(String passFailEntered) { this.passFailEntered = passFailEntered; }
+    //public void setAttendanceEntered(String attendanceEntered) { this.attendanceEntered = attendanceEntered; }
+    //public void setOfficeManager(String officeManager) { this.officeManager = officeManager; }
+    //public void setPlacementCoordinator(String placementCoordinator) { this.placementCoordinator = placementCoordinator; }
+
 
     public String getFirstName() {
         return firstName;
@@ -90,14 +90,12 @@ public class Person {
     public String getCoopHost() { return coopHost; }
     public String getStartDate() { return startDate; }
     public String getEndDate() { return endDate; }
-    public String getProjectName() { return projectName; }
     public String getCoopPlacement() { return coopPlacement; }
     public String getWsib() { return wsib; }
-    public String getPlacement() { return placement; }
     public String getInsurance() { return insurance; }
     public String getContractSignedOn() { return contractSignedOn; }
-    public String getContactAdd() { return contactAdd; }
-    public String getWorkAdd() { return workAdd; }
+    public String getContactName() { return contactName; }
+    public String getContactEmail() { return contactEmail; }
     public String getActualEndDate() { return actualEndDate; }
     public String getEvaluation1DueDate() { return evaluation1DueDate; }
     public String getEvaluation1SubmittedOn() { return evaluation1SubmittedOn; }
@@ -106,11 +104,13 @@ public class Person {
     public String getTimesheetDueDate() { return timesheetDueDate; }
     public String getTimesheetSubmittedOn() { return timesheetSubmittedOn; }
     public String getContactNumber() { return contactNumber; }
-    public String getFollowUps() { return followUps; }
-    public String getPassFailEntered() { return passFailEntered; }
-    public String getAttendanceEntered() { return attendanceEntered; }
-    public String getOfficeManager() { return officeManager; }
-    public String getPlacementCoordinator() { return placementCoordinator; }
+
+    // no longer required on ui form - only on word doc template.
+    //public String getFollowUps() { return followUps; }
+    //public String getPassFailEntered() { return passFailEntered; }
+    //public String getAttendanceEntered() { return attendanceEntered; }
+    //public String getOfficeManager() { return officeManager; }
+    //public String getPlacementCoordinator() { return placementCoordinator; }
 
 //    }
 

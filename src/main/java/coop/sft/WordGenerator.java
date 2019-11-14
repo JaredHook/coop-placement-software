@@ -97,30 +97,35 @@ public class WordGenerator {
         replacer.setSearchValue("$Timesheet-Submitted-On");
         replacer.setReplacement(person.getTimesheetSubmittedOn() + " ");
         replacer.replace(document);
-        replacer.setSearchValue("$Work-Address");
-        replacer.setReplacement(person.getWorkAdd() + " ");
+        //TODO: Change variable on template from $Work-Address to $Contact-Email
+        replacer.setSearchValue("$Contact-Email");
+        replacer.setReplacement(person.getContactEmail() + " ");
         replacer.replace(document);
-        replacer.setSearchValue("$Contact-Person");
-        replacer.setReplacement(person.getContactAdd() + " ");
+        //TODO: Change variable on template from $Contact-Person to $Contact-Name
+        replacer.setSearchValue("$Contact-Name");
+        replacer.setReplacement(person.getContactName() + " ");
         replacer.replace(document);
         replacer.setSearchValue("$Contact-Number");
         replacer.setReplacement(person.getContactNumber() + " ");
         replacer.replace(document);
-        replacer.setSearchValue("$Follow-ups");
-        replacer.setReplacement(person.getFollowUps() + " ");
-        replacer.replace(document);
-        replacer.setSearchValue("$Pass-Fail-Entered");
-        replacer.setReplacement(person.getPassFailEntered() + " ");
-        replacer.replace(document);
-        replacer.setSearchValue("$Attendance-Entered");
-        replacer.setReplacement(person.getAttendanceEntered() + " ");
-        replacer.replace(document);
-        replacer.setSearchValue("$Office-Manager");
-        replacer.setReplacement(person.getOfficeManager() + " ");
-        replacer.replace(document);
-        replacer.setSearchValue("$Placement-Coordinator");
-        replacer.setReplacement(person.getPlacementCoordinator() + " ");
-        replacer.replace(document);
+
+
+        // these fields no longer required on ui form - only on word doc template.
+        //replacer.setSearchValue("$Follow-ups");
+        //replacer.setReplacement(person.getFollowUps() + " ");
+        //replacer.replace(document);
+        //replacer.setSearchValue("$Pass-Fail-Entered");
+        //replacer.setReplacement(person.getPassFailEntered() + " ");
+        //replacer.replace(document);
+        //replacer.setSearchValue("$Attendance-Entered");
+        //replacer.setReplacement(person.getAttendanceEntered() + " ");
+        //replacer.replace(document);
+        //replacer.setSearchValue("$Office-Manager");
+        //replacer.setReplacement(person.getOfficeManager() + " ");
+        //replacer.replace(document);
+        //replacer.setSearchValue("$Placement-Coordinator");
+        //replacer.setReplacement(person.getPlacementCoordinator() + " ");
+        //replacer.replace(document);
 
         document.write(out);
 
