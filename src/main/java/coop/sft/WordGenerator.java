@@ -108,6 +108,10 @@ public class WordGenerator {
         replacer.setSearchValue("$Contact-Number");
         replacer.setReplacement(person.getContactNumber() + " ");
         replacer.replace(document);
+        //TODO: Add variable to template $Contact-Address
+        replacer.setSearchValue("$Contact-Address");
+        replacer.setReplacement(person.getContactAddress() + " ");
+        replacer.replace(document);
 
 
         // these fields no longer required on ui form - only on word doc template.

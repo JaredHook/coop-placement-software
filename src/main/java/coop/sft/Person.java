@@ -2,9 +2,8 @@ package coop.sft;
 
 public class Person {
 
-// TODO: decide if we can use different data types in java template for our variables
-// TODO: fields must be added to the ui form
-// TODO: ensure all fields are accounted for in template
+// TODO: create method to convert data types from strings
+//  TODO: edit java template data types for our variables
 
     private String firstName;
     private String lastName;
@@ -19,8 +18,8 @@ public class Person {
     private String contactName;
     private String contactNumber;
     private String contactEmail;
+    private String contactAddress;
     private String contractSignedOn;
-    // these fields must still be added to the form
     private String actualEndDate;
     private String evaluation1DueDate;
     private String evaluation1SubmittedOn;
@@ -58,6 +57,7 @@ public class Person {
     public void setContractSignedOn(String contractSignedOn){ this.contractSignedOn = contractSignedOn; }
     public void setContactName(String contactName) { this.contactName = contactName; }
     public void setContactEmail(String contactEmail) { this.contactEmail = contactEmail; }
+    public void setContactAddress(String contactAddress) { this.contactAddress = contactAddress; }
     public void setActualEndDate(String actualEndDate) { this.actualEndDate = actualEndDate; }
     public void setEvaluation1DueDate(String evaluation1DueDate) { this.evaluation1DueDate = evaluation1DueDate; }
     public void setEvaluation1SubmittedOn(String evaluation1SubmittedOn) { this.evaluation1SubmittedOn = evaluation1SubmittedOn; }
@@ -94,6 +94,7 @@ public class Person {
     public String getContractSignedOn() { return contractSignedOn; }
     public String getContactName() { return contactName; }
     public String getContactEmail() { return contactEmail; }
+    public String getContactAddress() { return contactAddress; }
     public String getActualEndDate() { return actualEndDate; }
     public String getEvaluation1DueDate() { return evaluation1DueDate; }
     public String getEvaluation1SubmittedOn() { return evaluation1SubmittedOn; }
