@@ -1,6 +1,7 @@
 package coop.sft;
 
 import javafx.application.Application;
+import javafx.event.ActionEvent;
 import javafx.geometry.Insets;
 import javafx.geometry.Orientation;
 import javafx.geometry.Pos;
@@ -15,6 +16,7 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import javafx.stage.Window;
 
 import java.io.IOException;
 import java.time.LocalDate;
@@ -225,6 +227,8 @@ public class Main extends Application {
 
         //Save and Print button
         Button btn = new Button("Save and Print");
+        //Display  document is saved and printed successfully
+        Label label = new Label("Document saved and printed successfully");
         fp2.getChildren().addAll(
                 btn
         );
@@ -237,7 +241,6 @@ public class Main extends Application {
         //Search button action set
         search.setOnAction(e ->
         {
-
             FirstName.setText(" First Name " + Fname.getText());
             System.out.println(Fname.getText() + " " + Lname.getText());
             LastName.setText("Last Name " + Lname.getText());
@@ -263,11 +266,23 @@ public class Main extends Application {
 
             //Create word document according to VK lines
 
+
+
+
             try {
+                PopUpWindow pop = new PopUpWindow();
+                pop.handleSubmitButtonAction(Fname,Lname, btn);
                 wg.createWord(person);
+
+                //When saved  and print button is pressed shows  "Document saved and printed Successfully"
+                //     fp2.getChildren().addAll(label);
+
             } catch (IOException ex) {
                 ex.printStackTrace();
             }
+
+
+
         });
 
         grid.add(fp2, 1, 18, 1, 2);

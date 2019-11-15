@@ -37,8 +37,6 @@ public class ReadExcelFile {
 
                     switch (cell.getCellType())
                     {
-
-
                         case NUMERIC :
                             System.out.print(cell.getNumericCellValue() + "\t");
                             break;
